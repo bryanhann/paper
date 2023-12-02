@@ -1,0 +1,4 @@
+while true; do
+   read x || exit
+   echo $(( 2 * $x ))
+done

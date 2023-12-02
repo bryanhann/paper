@@ -1,0 +1,37 @@
+
+SECRET=42
+TRIES=5
+
+[[ "$1" == "-n" ]] && {
+    NAME=$2
+    shift 2
+} || {
+    echo Please enter your name.
+    read NAME
+}
+
+echo Welcome to the HILO game $NAME!
+echo
+echo I have a secret number between zero and one hundred.
+echo Can you guess it? You will have $TRIES tries.
+echo
+for ATTEMPT in $(seq $TRIES); do 
+    read -p "Enter your guess: " -t 3 GUESS || {
+        echo 
+        echo Sorry, you took to long. Bye!
+        exit 1
+    }
+    if [[ $GUESS -lt $SECRET ]]; then
+        echo Sorry, your guess \"$GUESS\" was too low. Try again!
+    elif [[ $GUESS -gt $SECRET ]]; then
+        echo Sorry, your guess \"$GUESS\" was too high. Try again!
+    elif [[ $GUESS -eq $SECRET ]]; then
+        echo YOU WIN!
+        echo "(Number of attempts: $ATTEMPT)"
+        exit 0
+    else
+        echo unreachable
+        exit 99
+    fi
+done
+echo "You lose. The secret number was $SECRET."

@@ -1,0 +1,36 @@
+SECRET=42
+
+getguess () {
+    local XX
+    read -p "enter a guess" -t 3 XX || {
+        echo 
+        echo Sorry, you took to long. Bye!
+        return 1
+    }
+    echo $XX
+}
+
+testguess () {
+    local GUESS
+    local SECRET
+    GUESS=$1
+    SECRET=$2
+    [[ $GUESS -lt $SECRET ]] && echo low 
+    [[ $GUESS -gt $SECRET ]] && echo high
+    [[ $GUESS -eq $SECRET ]] && echo win
+}
+
+for XX in {1..5}; do 
+    GUESS=$(getguess)
+    testguess $GUESS $SECRET
+    #read -p "enter a guess" -t 3 GUESS || {
+    #    echo 
+    #    echo Sorry, you took to long. Bye!
+    #    exit 1
+    #}
+    [[ $GUESS -lt $SECRET ]] && { echo too low; continue; }
+    [[ $GUESS -gt $SECRET ]] && { echo too high; continue; }
+    echo "You win with $XX guess(es)!"
+    exit 0
+done
+echo "You lose. The secret number was $SECRET."

@@ -1,0 +1,16 @@
+for XX in apple banana; do echo $XX; done
+for XX in ; do echo $XX; done
+for XX in $(seq 3); do echo $XX; done
+for XX in $(seq 5 -1 0); do echo -n "$XX " ; done ; echo
+for XX in $(seq 5 -1 0); do echo -n "$XX " ; done ; echo blastoff!
+for XX in {5..0} blastoff! ; do echo -n "$XX "; done; echo
+
+for XX in {5..-3}; do 
+    echo countown is $XX
+    test $XX -eq 0 && break
+    echo returncode is $?
+    sleep .3
+    echo $?
+done
+
+echo $XX
