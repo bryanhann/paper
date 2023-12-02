@@ -1,0 +1,3 @@
+#man echo
+#echo "hello\nworld"
+echo -e "hello\nworld"

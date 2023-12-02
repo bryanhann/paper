@@ -1,0 +1,11 @@
+#!/bin/bash
+[ "$0" == "./init" ] || { echo try ./init ; exit ; }
+export MyRoot=${PWD}
+export MyTools=${MyRoot}/tools
+export PATH=${PATH}:${MyTools}
+
+git clone https://github.com/sstephenson/bats ${MyTools}/bats.tmp
+export PATH=${PATH}:${MyTools}/bats.tmp/bin
+rm ${MyTools}/bats
+ln
+poetry shell

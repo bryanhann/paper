@@ -1,0 +1,4 @@
+for word in $(echo $PATH | cut --delimiter ":" --output-delimiter " " -f 1-); do
+   [ "$word" == "$1" ] && exit 0
+done
+exit 1

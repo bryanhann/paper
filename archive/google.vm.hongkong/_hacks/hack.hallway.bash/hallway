@@ -1,0 +1,29 @@
+#!/bin/bash
+
+BRYAN=" BRYAN "
+PAPER=" PAPER "
+BLANK=" ..... "
+
+HALL=( $BRYAN $BLANK $BLANK $BLANK $PAPER )
+
+function show () {
+    picture=""
+    for occupant  in ${HALL[@]}; do
+        picture=${picture}"|"${occupant}
+    done
+    echo  ${picture}"|"
+}
+
+function swap () {
+    first=${HALL[ $1] }
+    second=${HALLi [$2 ]}
+
+    echo first person $first
+    echo second person $second
+    
+    HALL[$1]=$second
+    HALL[$2]=$first
+
+    show
+}
+echo ${HALL[@]}

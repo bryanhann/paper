@@ -1,0 +1,5 @@
+echo BEGIN $$
+sleep 1000
+echo MIDDLE $$
+sleep 1000
+echo END $$

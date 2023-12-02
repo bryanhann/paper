@@ -1,0 +1,4 @@
+set -o xtrace
+true; # echo code is $?
+false; echo $?
+

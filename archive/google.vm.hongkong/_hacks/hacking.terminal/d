@@ -1,0 +1,47 @@
+#echo -e "hello\b\b\b\b\bworld"
+#man date
+#date +"%D %T"
+#T=$(date +"%T")
+##echo The time is: $T
+
+
+cursor_at_4LC_4cmd () {
+    _cursor_save
+    _cursor_go_4LC $1 $2
+    shift 2
+    $*
+    _cursor_restore
+} 
+_cursor_restore () { echo -n -e "\e[u" ; }
+_cursor_save    () { echo -n -e "\e[s"; }
+_cursor_go_4LC  () { echo -e -n "\e[${1};${2}H"; }
+
+hhmmss () { date +"%T" ; }
+showtime () { echo -n "[$(hhmmss)]" }
+run_clock () {
+    while true; do
+        cursor_at_4LC_4cmd 3 30  showtime
+        sleep 1
+    done
+}
+run_clock
+exit 
+
+export G="\e[0;32m" #Green
+echo -e -n ${G}asd
+echo -e -n $RESET
+echo sfdi
+echo -e -n $CURSOR_SAVE
+golc 3 10
+echo HHHHHH
+echo -e -n $CURSOR_RESTORE
+echo -e -n $CURSOR_SAVE
+UL 12
+echo -n $(date +"%T")
+echo -n QQQQQ
+echo -e -n $CURSOR_RESTORE
+
+echo done
+#
+#
+#\e[0;33m	Yellow

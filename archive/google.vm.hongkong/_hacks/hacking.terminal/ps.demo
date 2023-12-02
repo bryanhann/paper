@@ -1,0 +1,5 @@
+echo $$
+for ii in $(seq 100000); do
+    echo $$ $ii >> tmp.$$
+    sleep 1
+done

@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+echo Hello World!
+echo Hello Paper!
+echo Goodbye Paper!
+echo Goodbye World!

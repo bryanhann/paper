@@ -1,0 +1,22 @@
+[[ $1 = *[[:digit:]]* ]] || {
+    err=$?
+    echo bad first argument
+    exit $err
+}
+[ "$1" == "" ] && echo missing first argument && exit {
+    echo missing first argument
+    exit 101
+}
+[ "$2" == "" ] && {
+    echo missing second argument
+    exit 102
+}
+[ "$4" == "" ] || {
+    echo two many arguments
+    exit 102
+}
+
+echo $(( $1 + $2 )) && exit 0
+
+exit $?
+

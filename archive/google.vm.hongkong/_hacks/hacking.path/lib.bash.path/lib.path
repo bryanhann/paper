@@ -1,0 +1,42 @@
+#!/bin/bash
+
+
+
+function path-split () {
+   for word in $(echo $PATH | cut --delimiter ":" --output-delimiter " " -f 1-); do
+       echo ${word}
+   done
+}
+
+function path-split-without () {
+    for word in $(path-split); do
+        [ ! "$word" == "${1}" ] && echo $word
+    done
+}
+function path-has () {
+    for word in $(path-split); do
+        [ "$word" == "${1}" ] && return 0
+    done
+    return 1
+}
+
+function colon-join {
+    acc=""
+    for word in $*; do
+        acc=${acc}${word}:
+    done
+    echo $acc
+}
+
+function path-split-with () {
+   path-split
+   path-has $1 && return
+   echo $1
+}
+
+function path-without () {
+    colon-join $(path-split-without $1)
+}
+function path-with () {
+    colon-join $(path-split-with $1)
+}

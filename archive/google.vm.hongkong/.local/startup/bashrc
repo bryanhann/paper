@@ -1,0 +1,19 @@
+# Announce to the user that we have begun sourcing of this file
+echo ++[~/.local/.bashrc]
+
+echo BCHFIRST is $BCHFIRST
+[ ! -z $BCHINIT ] && . ~/.local/startup/firstrun.bash
+echo BCHFIRST is $BCHFIRST
+#  . ~/.local/startup/leave.bash
+   . ~/.local/startup/exittrap.bash
+
+
+# say some stuff
+#echo ROOT BASH PID: $XROOT
+#echo THIS BASH PID: $$
+#echo depth is: $(depth)
+#ps | grep bash
+
+
+# Announce to the user that we have ended sourcing of this file
+echo --[~/.local/.bashrc

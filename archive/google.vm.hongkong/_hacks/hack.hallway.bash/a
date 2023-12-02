@@ -1,0 +1,2 @@
+A=Apple
+echo $$ A is $A

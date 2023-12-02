@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+DATA=./database
+
+[ "$1" == "--clear" ] && { echo -n > $DATA ; exit ;}
+[ "$1" == "--dump" ] && { cat $DATA ; exit ; }
+[ "$1" == "--find" ] && { cat $DATA | grep $2 ; exit ; }
+
+NAME=$1 
+AGE=$2
+
+[ "$NAME" == "" ] && read -p "Please enter your name: " NAME
+
+[ "$AGE" == ""  ] && read -p "Please enter your age, ${NAME}: " AGE
+echo "***Now I know that ${NAME} is  ${AGE} years old."
+echo "***I will store that to by datafile"
+echo ${NAME} ${AGE} >> $DATA

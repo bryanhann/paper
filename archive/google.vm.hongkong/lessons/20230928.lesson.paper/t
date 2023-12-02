@@ -1,0 +1,12 @@
+cmd=./v6.save
+set -o xtrace
+$cmd --clear
+$cmd --dump
+$cmd --find Paper
+$cmd --dump
+$cmd Paper 13
+$cmd "Mr. Bryan" 101
+$cmd " Bryan" 102
+$cmd --dump
+$cmd --find Paper
+$cmd --find Bryan

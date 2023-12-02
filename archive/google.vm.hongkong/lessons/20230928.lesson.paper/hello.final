@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+
+# '#' means comment
+# But '#!' at the start of first line tell the system
+# what program should run this file/
+
+# this will be a bash script, run by bash.
+
+# "^" cARET
+
+NAME=$1
+AGE=$2
+echo Hello World!
+echo
+#echo
+
+echo Hello $NAME
+echo
+
+while true; do
+    echo Please enter your name.
+    read NAME
+    [ "$NAME" == "quit" ] && brea
+    echo I have been told that $NAME is $AGE years old
+
+done
+echo Goodbye $NAME
+echo Goodbye!

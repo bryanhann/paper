@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+echo Please enter your name
+read NAME
+echo Hello World!
+echo Hello ${NAME}!
+echo Goodbye ${NAME}!
+echo Goodbye World!

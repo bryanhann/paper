@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+import random
+for ii in range(10):
+    print( random.randint(1,5) )
+import sys
+import time
+import colorama
+from colorama import init, Fore, Back
+import click
+
+@click.group()
+def cli():
+    pass
+@click.command()
+@click.option('--secret', default=42, help='number of greetings')
+
+def main( secret ):
+    print( "the secret number is", secret)
+    print( type(secret) )
+cli.add_command(main)
+if __name__ == "__main__":
+
+    main()

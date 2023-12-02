@@ -1,0 +1,2 @@
+A=APPLE
+echo $A

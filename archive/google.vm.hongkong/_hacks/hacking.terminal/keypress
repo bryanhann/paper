@@ -1,0 +1,25 @@
+STATEFILE=./_state.tmp
+touch $STATEFILE
+display () {  
+    global INPUT
+    for ii in $(seq 10); do
+        input=$(cat $STATEFILE)
+        echo "$ii [$input] $$"
+        sleep 1
+    done
+    exit
+}
+
+main () {
+    global INPUT
+    sleep 1.2
+    echo MAIN
+    while true; do
+        read -r -s -n 1 INPUT
+        echo "{$INPUT} $$"
+        echo -n $INPUT > $STATEFILE
+    done
+}
+INPUT=foo
+display &
+main

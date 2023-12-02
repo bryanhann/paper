@@ -1,0 +1,5 @@
+./testpath $1 && return
+
+echo appending $1 to PATH
+export PATH=${PATH}:$1
+./showpath

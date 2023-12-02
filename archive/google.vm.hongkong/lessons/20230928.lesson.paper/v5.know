@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+read -p "Please enter your name: " NAME
+read -p "Please enter your age: " AGE
+echo "NOw I know that ${NAME} is  ${AGE} years old."

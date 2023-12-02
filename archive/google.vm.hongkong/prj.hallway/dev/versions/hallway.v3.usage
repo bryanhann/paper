@@ -1,0 +1,15 @@
+usage: . hallway [--color] [--help]
+
+Export commands for the hallway game to the current bash environment.
+
+Options:
+    --color  Play more colorfully
+    --help   Print this help message
+
+Functions:
+    start-hallway-game   Reset the game
+    show                 Show the gamestate
+    inspect N            Show occupant of room N
+    swap M N             Swap the occupants of rooms M and N
+    step-right           Move the occupant of room N one room to the right
+

@@ -1,0 +1,17 @@
+#echo -e "hello\b\b\b\b\bworld"
+#man date
+#date +"%D %T"
+#T=$(date +"%T")
+##echo The time is: $T
+
+function count_to_10() {
+    echo Counting to 10.
+    for ii in $(seq 8 12); do
+        #echo -n "${ii}"
+        #echo -n -e "${ii}\b"
+        echo -n -e "${ii}\b\b"
+        sleep 1
+    done
+}
+
+count_to_10

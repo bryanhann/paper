@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+NAME=Paper
+echo Hello World!
+echo Hello ${NAME}!
+echo Goodbye ${NAME}!
+echo Goodbye World!

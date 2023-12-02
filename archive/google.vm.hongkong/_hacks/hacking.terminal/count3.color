@@ -1,0 +1,20 @@
+#echo -e "hello\b\b\b\b\bworld"
+#man date
+#date +"%D %T"
+#T=$(date +"%T")
+##echo The time is: $T
+
+function hhmmss () {
+   date +"%T"
+} 
+
+function clock() {
+    while true; do
+        echo -n -e "$(hhmmss)\b\b"
+        sleep 1
+    done
+}
+
+#count_to_10
+#hms
+clock
