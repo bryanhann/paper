@@ -1,0 +1,235 @@
+he purpose of this introduction to lists was (in part)  to set up these meta questions, and the purpose of these meta questions is to motivate our next topic: the difference between intuitive thinking and rigourous thinking in mathematics and programming.
+
+Here our intuition tells us that the lists are not the same. But from the standpoint of rigour, a first problem is that we HAVE NOT DEFINED THE TERM LIST. We gave examples. But without a definition of what a list is, and what it MEANS for two lists to be 'not the same', we need to be more precise about what lists are, and about what makes to lists 'the same'. There is a lot of mathematics to discover with what it means, in general, for two things to be 'the same' or not. We will see that there are different *senses* in which things can be 'the same' or not. We will see that two things can be 'the same' is some ways, but not 'the same' in other ways, and we will discover the 'general rules' by which we might consider two things to be, in some sense, 'the same thing'.
+
+But we could not start with that much rigour. If we are to think rigourously, we must have something to think rigourously about. And this starts with intuition. We will find that rigour sharpens intuition, just as intuition leads rigour.
+
+Rigour in mathematics is often very abstract. This can make it hard to appreciate, learn, and apply. But computers are not abstract. They are very concrete. But a computer has no intuition. It can do only rigour.
+
+We will teach a computer what a list is, teach it how to model lists, and teach it rules by which it can determine whether two lists are the same. By doing so, we will learn mathematical rigour in a practical, concrete, hands on way.
+LISTS and ITEMS.
+
+Lists are very important in mathematics -- not because they
+are especially interesting as a concept, but because they are
+a basic structure for other, more interesting things.
+
+We start with some examples of lists:
+
+    A = [2, 3, 5, 7, 11]
+    B = [Red, Green, Blue]
+    C = [0, 1, 0, 1, 0]
+    D = [Red]
+    E = []
+
+List A is a list of the first five prime numbers. The first
+item in list A is the number 2. List B is a list of colors.
+The first item in list B is the color Red. List C is a list
+of alternating zeros and ones. The first item in list C is
+the number 0. List D contains a single item -- the color Red.
+This is an example of a *singleton list*. The first item in
+a singleton list is the list's only item. List E contains no
+items. This is called *the empty list*.
+
+#ITEMS CAN BE LISTS
+
+Using the above examples, we construct some examples of lists
+whose items are themselves lists.
+
+    F = [ [1,2,3], [A,B,C] ]
+    G = [ [], [Red] ]
+    H = [ [], [] ]
+    I = [ [], 2 ]
+    J = [ [] ]
+    K = [ [ [] ] ]
+    L = [ K ]
+
+List F has two items, each of which are themselves lists of
+three items. List G has two items: the first item is the empty
+list, and the secont item is a singleton list. List H has two
+repeated items: the first item is the empty list, and the second
+item is the empty list. List I has two items. The first item is
+the empty list, and the second item is the number 2. List J has
+one item: the empty list. List K also has one item. This item is
+not the empty list, but is the list containing the empty list.
+Note that 'the list containing the empty list' is precisely the
+list J, and we could have written 'K = [J]'
+
+#LISTS CAN BE CATENATED.
+
+We can join two lists to make a new list in the obvious way.
+This joining will be called *list catenation*. List atenation
+takes two lists, a first list and a second list, and 'glues' them
+together.
+
+    [0,1,2] ++ [3,4] -> [0,1,2,3,4]
+
+Catanation enjoys two MONOIDAL properties. First, he empty
+list is NEUTRAL on both left and right of the '++' operator:
+
+    X++[] == X
+    []++X == X
+
+Second, catenation is ASSOCIATIVE:
+
+    (X++Y)++Z == X++(Y++Z)
+
+But catenation is NOT COMMUTATIVE.
+
+    [0]++[1] == [0,1], but
+    [1]++[0] == [1,0],.
+
+and [0,1] is not equal to [1,0]. But why?
+
+
+#EQUALITY OF LISTS
+
+I just claimed that the list [0,1] is not equal to the
+list [1,0]. I then asked the question: 'but why?' This
+claim, and this question, goes to the heart of what it
+means to do mathematics. There are two modes of thinking
+in mathematic which we might call the 'intuitive' and
+the 'rigourous'. Both modes are important, but they serve
+different purposes. At the beginning of his mathematical
+studies, the student of mathematics might not be aware of
+the difference. Later, he will be aware of the difference,
+but not be sure which mode he is thinking in. Later, he
+will know which mode he is thinking in, but not know which
+mode is appropriate at any given time. Eventually he will
+know when to think in one mode or the other, or both at the
+same time.
+
+
+But what are these modes, these ways of thinking? What is
+'intuitive thinking' versus 'rigourous thinking'? Rather
+than trying to give a general account (which could fill a
+textbook), I will point out the differences as we proceed.
+
+I did not define what a list is. More precisely, I did not
+define the term 'list'. Instead I gave examples which helped
+you have an INTUITIVE understanding of what I MEAN when I
+use the term 'list'. Your intuition was helped by the fact
+that 'list' is a common English word, a word you already know
+how to use in day to day speach. This is a good *pedagogical*
+(= art of teaching) starting point. A teacher that uses too
+much rigour, too early, is a bad teacher.
+
+But mathematics *as a discipline* or *as a field of study* is
+perhaps the most one you are already
+familiarwhichthe English language already , and then
+talked about these examples, hoping they would make INTUITIVE
+sense. That is somgave examples of lists, but I did
+not defin
+
+In mathematics, part of rigour involves definition
+. ether his thinking is intuitive or rigourous.
+Later, he will know whether he is thinking int, or whether he is thinking intuitively or
+rigourously. and will not realize that he is thinking
+in beginning student of mathematics
+might not be aware of the differencet modes of thinking,
+and be unaware that he is thinking in one mode or another.
+Over time, he will recognize in himself whether he is
+thinking intuitively or rigourously. .
+He might not be aware oquite recognize the different modes of thinking.
+Over time, perceive the difference in thinking. A skilled mathematician will recognize
+the diffThese modes serve different purposes.
+BoAs one matures as a mathematician, one modes of thought have a role. It
+is . We might call one the 'intuitive' modes , the intuitive and the rigourous, obvious mode,The art of mathematics involves
+shifting When we do mathematics, we are
+
+
+
+
+Why are the lists not equal? This The reply might
+be I then asked why.
+
+
+
+
+
+List G has two items. The feach contain TWO items. InIn lists
+#HEAD and TAIL
+
+Definitions:
+    - We define the *head* of a given nonempty list to be the first
+item in that list.
+    - We define the *tail* of a given nonempty list
+to be what results from removing the head of the given list.
+
+This is best seen with examples:
+
+    head [Red, Blue, Green] -> Red
+    tail [Red, Blue, Green] -> [Blue, Green]
+    head [0, 1, 0, 1, 0] -> 0
+    tail [0, 1, 0, 1, 0] -> [1, 0, 1, 0]
+    head [Red] -> Red
+    tail [Red] -> []
+
+Note that the expressions 'head []' and 'tail []' make no sense
+under our definition. We say that these expressions are *undefined*
+because we have *no definition* for them. We will write this as
+
+    head [] -> UNDEFINED
+    tail [] -> UNDEFINED
+
+Note that the he
+    *could* define them in havare UNDEFINED.
+for enand we define the *tail* of a list to be that
+list with its what
+remaiEvery list other than the empty list has a first item. We
+call this item the *head* of the list. The head of list A
+is the number 2. The head of list D is the color Red. The
+empty list E has no head.
+
+Which of the following statements are true, which are false,
+and which are meaningless?
+
+    1.  (head A) is 2
+    2.  (head B) is 2
+    3.  (head E) is 2
+
+The first statment is true. The second statement is false.
+The third statement is trickier. Since E has no head, the
+expression '(head E)' is *undefined*. That is to say, we
+define the expression '(head X)' only when X is not empty.
+for cases where X
+is not empty. So '
+
+We can define the *expression* '(head X)' as a shorthand
+way of referring to the head of X. This will makedenote the head
+of any list X. We can then write expressions like '(head A)==2' to say that the
+first item of the list A is 2. Since '(head X)' is, by
+def5.Which of the following statements are true?the
+list. Here '<X>' stand in for any list. We could define
+By definition it is the first item in the list.items, and any list that has items has a *first* item. This is what
+it means to say that contains a F
+
+We will not here define the term 'list' but will give some
+examples of lists, and language to talk about them.
+
+Lists are always lists 'of' something. One can have lists
+of numbers. One can have lists of words. One can even have
+lists of lists. In general we speak of a lists of *items*,
+and speak of the *items in a list*.
+
+There are many ways to notate a list. One common way is to
+write out the items of a list between square brackes, separated
+by commas. Here is a lists of the first five prime numbers:
+
+    A = [ 2, 3, 5, 7, 11 ]
+
+Here is a list of writers of the Gospels:
+
+    B = [ 'Mark', 'Matthew', 'Luke', 'John'  ]
+
+A very special, very trivial, but very important listi, is the
+list that has NO items. This is called *the empty list* and in
+our notation it is written as:
+
+    C = []
+
+Lists awell ordered. This means that every list other than
+the empty list has a FIRST item. The first item in the
+contains NO items. This is
+called theenclosed by squareseperated by commas, in a list,
+and say thathey are
+very important in mathematics

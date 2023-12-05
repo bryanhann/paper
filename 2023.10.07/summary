@@ -1,0 +1,100 @@
+"""
+In python, everything is an object, and every object has
+a type. We saw three types: int, str, list, and NoneType
+"""
+
+some_int = 1
+some_string = "Hello"
+some_list = ["Hello", "World"]
+some_none = None
+
+1 + 2          # -> 3
+'abc' + 'def'  # -> 'abcdef'
+#'abc' + 2      # -> TypeError
+'abc' * 2      # -> 'abcabd'
+
+#exit()
+
+x='''
+##### ABOUT STRINGS
+a ='abc'
+b ='DEF'
+s = ' '
+e = ''
+ab  = a + b
+ba  = b + a
+asb = a + s + b
+bsa = b + s + a
+assert ab  == 'abcDEF'
+assert asb == 'abc DEF'
+
+# strings support indexing
+assert len(a)   == 3
+assert len(ab)  == 6
+assert leb(asb) == 7
+assert len(s)   == 1
+assert len(e)   == 0
+
+
+assert len(a)==3
+>>> a[0] # --> 'a'
+>>> a[1] # --> 'b'
+>>> a[2] # --> 'c'
+>>> a[3] # IndexError
+>>> a[-1] # --> 'c'
+>>> a[-2] # --> 'b'
+>>> a[-3] # --> 'a'
+>>> a[-4] # IndexError
+
+>>> assert len(ab)==6
+>>> ab[0:]  # --> 'abcABC'
+>>> ab[1:]  # --> 'bcABC'
+>>> ab[2:]  # --> 'cABC'
+>>> ab[:-1] # --> ''
+>>> ab[2:4]  # --> 'ab'
+>>> a[2] == 'c'
+assert a[3] == 'd' # IndexError
+assert a[4]        # IndexError
+assert a[0] == 'a'
+assert a[1] == 'b'
+assert a[2] == 'c'
+assert a[3] == 'd'
+assert a[4]        # IndexError
+
+
+assert len(ab) == 8
+
+assert ab[0] == 'a'
+assert ab[1] == 'b'
+assert ab[6]  == 'C'
+assert ab[7]  == 'D'
+assert ab[8]  # IndexError
+assert ab[10] 
+>>> a[0]   # 'A'
+>>> a[1]   # 'B'         # -> 'a'
+>>> a[4]   # 'C'         # -> 'a'
+>>> a[5]   # IndexError
+>>> a[-1]  # 'E'
+>>> a[-5]  # 'B'
+>>> a[-6]  # IndexError
+>>> b[0:4] # 'abcd'
+>>> b[4:8] # 'efgh'
+>>> b[:4]  # 'abcd'
+>>> b[4:]  # 'efghij...xyz'
+>>> b[-3:] # 'xyz'
+>>> ab[4:8] # 'eABCD'
+
+>>> (a+b)[4:8] # 'eABC'
+
+
+len(a)          # -> 26
+name[0]         # -> 'P'
+>>> name[4]         # -> 'r'
+>>> name[-1]        # -> 'r'
+>>> name[-5]        # -> 'P'
+>>> name[:2]        # -> 'Pe'
+>>> name[2:]        # -> 'ter'
+>>> name[:-2]       # -> 'Pet'
+>>> name[-2:]       # _>
+'''
+
